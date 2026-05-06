@@ -31,4 +31,6 @@ EXPOSE 8004
 
 HEALTHCHECK CMD curl --fail http://localhost:8004/version || exit 1
 
+COPY ./docker/proxy-themes/bae-frontend /opt/business-ecosystem-logic-proxy/portal/bae-frontend
+
 ENTRYPOINT ["/entrypoint.sh"]

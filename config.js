@@ -28,22 +28,22 @@ config.portalPrefix = '';
 config.logInPath = '/login';
 config.logOutPath = '/logOut';
 config.sessionSecret = 'keyboard cat';
-config.theme = '';
+config.theme = 'citcom';
 
 // OAuth2 configuration
 //'server': 'http://34.213.26.168:8000/',
 config.oauth2 = {
-	provider: 'fiware',
-	server: 'http://idm.docker:3000',
-	clientID: '19dd858c-328c-4642-93ab-da45e4d253ae',
-	clientSecret: '09ffe023-a242-46a3-bd83-9277d36e2379',
-	callbackURL: 'http://proxy.docker:8004/auth/fiware/callback',
-	oidc: true,
-	oidcScopes: "openid",
-	oidcDiscoveryURI: null,
-	oidcTokenEndpointAuthMethod: "client_secret_basic",
-	key: '281e126aa35c80f2',
-	defaultRole: null
+    provider: 'fiware',
+    server: 'http://idm.docker:3000',
+    clientID: '19dd858c-328c-4642-93ab-da45e4d253ae',
+    clientSecret: '09ffe023-a242-46a3-bd83-9277d36e2379',
+    callbackURL: 'http://proxy.docker:8004/auth/fiware/callback',
+    oidc: true,
+    oidcScopes: "openid",
+    oidcDiscoveryURI: null,
+    oidcTokenEndpointAuthMethod: "client_secret_basic",
+    key: '281e126aa35c80f2',
+    defaultRole: null
 };
 
 config.roles = {
@@ -104,9 +104,9 @@ config.siop = {
     allowedRoles: process.env.BAE_LP_SIOP_ALLOWED_ROLES
         ? process.env.BAE_LP_SIOP_ALLOWED_ROLES.split(',')
         : {
-              customer: 'customer',
-              seller: 'seller'
-          },
+            customer: 'customer',
+            seller: 'seller'
+        },
     operators: process.env.BAE_LP_SIOP_OPERATORS ? process.env.BAE_LP_SIOP_OPERATORS.split(',') : [],
     signAlgorithm: process.env.BAE_LP_SIO_SIGN_ALGORITHM || 'ES256'
 };
@@ -636,16 +636,16 @@ config.mongoDb.db = process.env.BAE_LP_MONGO_DB || config.mongoDb.db || 'belp';
 // Revenue Sharing and tax rate
 config.revenueModel =
     config.revenueModel !== undefined &&
-    config.revenueModel !== null &&
-    config.revenueModel >= 0 &&
-    config.revenueModel <= 100
+        config.revenueModel !== null &&
+        config.revenueModel >= 0 &&
+        config.revenueModel <= 100
         ? config.revenueModel
         : 30;
 
 config.revenueModel =
     !!process.env.BAE_LP_REVENUE_MODEL &&
-    Number(process.env.BAE_LP_REVENUE_MODEL) >= 0 &&
-    Number(process.env.BAE_LP_REVENUE_MODEL) <= 100
+        Number(process.env.BAE_LP_REVENUE_MODEL) >= 0 &&
+        Number(process.env.BAE_LP_REVENUE_MODEL) <= 100
         ? Number(process.env.BAE_LP_REVENUE_MODEL)
         : config.revenueModel;
 
@@ -656,8 +656,8 @@ config.taxRate =
 
 config.taxRate =
     !!process.env.BAE_LP_TAX_RATE &&
-    Number(process.env.BAE_LP_TAX_RATE) >= 0 &&
-    Number(process.env.BAE_LP_TAX_RATE) <= 100
+        Number(process.env.BAE_LP_TAX_RATE) >= 0 &&
+        Number(process.env.BAE_LP_TAX_RATE) <= 100
         ? Number(process.env.BAE_LP_TAX_RATE)
         : config.taxRate;
 
